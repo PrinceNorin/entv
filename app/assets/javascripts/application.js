@@ -20,3 +20,14 @@ var ready = function() {
 }
 
 $(document).on("page:load", ready);
+
+function remove_fields(link) {
+  $(link).prev("input[type=hidden]").val("1");
+  $(link).closest(".fields").hide();
+}
+
+function add_fields(link, assoc, content) {
+  var new_id = new Date().getTime();
+  var regexp = new RegExp("new_" + assoc, "g");
+  $(link).parent().before(content.replace(regexp, new_id));
+}

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150305074031) do
+ActiveRecord::Schema.define(version: 20150305163231) do
 
   create_table "categories", force: true do |t|
     t.string   "name"
@@ -61,7 +61,7 @@ ActiveRecord::Schema.define(version: 20150305074031) do
     t.string   "name"
     t.string   "company"
     t.decimal  "price"
-    t.integer  "total"
+    t.integer  "total",       default: 0
     t.datetime "created_at"
     t.datetime "updated_at"
   end
